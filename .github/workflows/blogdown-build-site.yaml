@@ -18,7 +18,7 @@ jobs:
       - name: Install Hugo
         run: Rscript -e 'blogdown::install_hugo()'
       - name: Render site
-        run: Rscript -e 'blogdown::build_site()'
+        run: hugo
       - uses: actions/upload-artifact@v1
         with:
           name: public
