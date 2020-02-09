@@ -17,6 +17,8 @@ jobs:
         run: Rscript -e 'install.packages(c("rmarkdown","blogdown"))'
       - name: Install Hugo
         run: Rscript -e 'blogdown::install_hugo()'
+      - name: Get themes
+        run: git submodule update --remote
       - name: Render site
         run: hugo
       - uses: actions/upload-artifact@v1
