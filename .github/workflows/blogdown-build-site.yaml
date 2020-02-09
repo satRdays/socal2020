@@ -19,6 +19,8 @@ jobs:
         run: Rscript -e 'blogdown::install_hugo()'
       - name: Get themes
         run: git submodule update --remote
+      - name: Look at files
+        run: Rscript -e 'dir()'
       - name: Render site
         run: hugo
       - uses: actions/upload-artifact@v1
@@ -49,4 +51,4 @@ jobs:
           EMAIL: emilhhvitfeldt@gmail.com               # must be a verified email
           GH_TOKEN: ${{ secrets.GITHUB_PAT }} # https://github.com/settings/tokens
           BUILD_DIR: public                     # "_site/" by default
-          JEKYLL_SITE: "YES"
+          JEKYLL_SITE: "NO"
